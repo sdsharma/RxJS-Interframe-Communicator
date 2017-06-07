@@ -1,0 +1,31 @@
+<html>
+
+<head>
+
+    <style>
+        textarea {
+            height: 25%;
+            width: 100%;
+        }
+    </style>
+
+</head>
+
+<body>
+    <pre id="text"></pre>
+    <textarea id="objectValue">{ "name":"John", "age":30, "city":"New York", "sent-by": 1}</textarea>
+    <button onclick="send()">Send Object</button>
+    <script>
+        window.top.subject.subscribe({
+            next: (v) => {
+                document.getElementById("text").innerHTML = JSON.stringify(v, null, 2);
+            }
+        });
+
+        send = () => {
+            window.top.subject.next(JSON.parse(document.getElementById("objectValue").value));
+        }
+    </script>
+</body>
+
+</html>

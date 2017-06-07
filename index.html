@@ -1,0 +1,25 @@
+<html>
+
+<head>
+    <style>
+        body {
+            display: flex;
+        }
+
+        iframe {
+            flex: 1;
+        }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/rxjs/5.4.0/Rx.min.js" integrity="sha256-JCtZtT8XI/qC4QJw4rg5Su8DM0vYebfnXaPS7n9KdJg="
+        crossorigin="anonymous"></script>
+    <script>
+        window.subject = new Rx.BehaviorSubject({});
+    </script>
+</head>
+
+<body>
+    <iframe src="app1.html"></iframe>
+    <iframe src="app2.html"></iframe>
+</body>
+
+</html>
